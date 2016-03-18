@@ -1,0 +1,46 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+insecure
+service-configuration
+momentjs:moment
+mizzao:user-status
+materialize:materialize
+jquery
+iron:router
+fortawesome:fontawesome
+edgee:slingshot
+brentjanderson:buzz
+
+
+accounts-google
+natestrauser:animate-css
+meteor-base
+mobile-experience
+mongo
+blaze-html-templates
+session
+tracker
+logging
+reload
+random
+ejson
+spacebars
+check
+
+
+npm-container
+seba:minifiers-autoprefixer
+fourseven:scss
+msavin:mongol
+tmeasday:presence
+u2622:persistent-session
+reactive-var
+reactive-dict
+meteorhacks:npm
+watson
+accounts-facebook
+accounts-twitter

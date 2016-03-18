@@ -1,0 +1,50 @@
+<template name="auctionSidebar">
+	<style type="text/css">
+		.circle-ab{
+			width:10px;
+			height:10px;
+			border-radius: 50%;
+		}
+		.green{
+			background:#3AFF4D !important; 
+		}
+		.red{
+			background:#FF3232 !important;
+		}
+
+		.pretty-bidder{
+			font-size: 18px;
+
+		}
+
+	</style>
+
+
+	<ul class="collection with-header animated fadeInDown">
+	<li class="collection-header"><p class="  flow-text">Subscribed bidders</p></li>
+	
+
+
+	{{#each userSubscribed}}
+       {{> userListItem}}
+    {{/each}}
+		<!-- *************** TESTING BLOCK ************ -->
+<!--         <li class="collection-item"><div>And<a href="#!" class="secondary-content"><div class="circle-ab green"></div></a></div></li>
+        <li class="collection-item"><div>The<a href="#!" class="secondary-content"></a></div></li>
+        <li class="collection-item"><div>Chipmunks<a href="#!" class="secondary-content"></a></div></li> -->
+		<!-- ****************************************** -->
+      </ul>
+
+      {{#if emptyLobby}}
+      	<p class="cyan-text light" style="margin-left : 10px">no bidders yet</p>
+      {{/if}}
+</template>
+
+<template name="userListItem">
+	<li class="collection-item" >
+	<div>{{profile.name}}
+	<!-- <a href="#!" class="secondary-content"><i class="circle-ab {{#if online}} green {{else}} red{{/if}}"></i></a> -->
+	<a href="#!" class="secondary-content"><div class="circle-ab {{#if online}} green {{else}} {{#if idle}} yellow {{else}} red{{/if}}{{/if}}"></div></a>
+	</div>
+	</li>
+</template>

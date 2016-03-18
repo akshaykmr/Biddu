@@ -1,0 +1,41 @@
+<template name="ownerCard">
+	<div class="row style-owner-info valign-wrapper">
+		<div class="image-owner" style="width:25%;" >
+			<img  class="circle " src="{{profile.picture}}" alt="">
+		</div>
+		<div class="username valign" style="width: 60%;">
+
+		<span class="light">Owner:</span> 	{{profile.name}}
+		</div>
+
+		<div class="cyan reputation-tag valign" style="width: 15%;">Rep<b> {{profile.rep}}</b></div>
+	</div>
+
+	<style>
+	.style-owner-info {
+		max-height: 80px;
+		color : #324c59;
+		margin-top : 10px;
+		margin-bottom: 0px;
+		border-radius: 3px;
+	}
+
+	.reputation-tag{
+		height:100%;
+		border-radius: 3px;
+		text-align: center;
+	}
+
+	.image-owner{
+		display: inline-block;
+		height: 100%;
+	}
+
+	.image-owner>img{
+		max-height: 80%;
+		max-width:80%;
+		height: auto;
+	}
+
+	</style>
+</template>

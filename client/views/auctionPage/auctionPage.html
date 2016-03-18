@@ -1,0 +1,250 @@
+<template name="auctionPage">
+<audio autoplay preload="auto" autobuffer controls class="audio"></audio>
+	<!-- desktop -->
+	{{#if desktop}}
+	
+		<div class="row">
+
+			<div class="col l2">			
+			<!-- user subscribed -->
+			{{> auctionSidebar this}}
+			</div>
+
+			<div class="col l7">
+				<div class="row ">
+
+				<div class="col l5 animated fadeIn" style="">
+					{{>itemCard}}
+				</div>
+				
+				<div class="col l7 bid-panel ">
+
+						<!-- Add owner details here -->
+					<div class="row owner-info-holder">
+						<div class="col l12">
+							{{#with  owner}}
+								{{> ownerCard}}
+							{{/with}}
+						</div>
+					</div>				
+					
+					<div class="row auction-control ">
+					
+						<div class="col l12">
+							{{#if winner}}	
+								{{> winnerCard this.winner }}
+							{{else}}
+
+							<div class=" white-text">
+								<div class="row">
+									<p class="flow-text white-text"> 
+									
+										{{#if currentBid}}
+										Current Bid : <b>Rs {{currentBid}}</b> <br>
+										Leading : <b> {{leading.userProfile.name}}</b>
+										{{else}}
+										Start Bid :<b> Rs {{startBid}}</b> <br>
+										{{/if}}
+									 </p>
+								</div>	
+
+								{{#if ownerPage}}
+								<div class="row input-field">
+									<a href="#" id="stopAuction" class="btn btn-default" style="margin-bottom: 10px;" >end auction</a>
+								</div>
+
+								{{else}}
+								<div class="row input-field">
+								<label for="bid">Enter bid</label>
+								 <input id="bid" type="number">
+									<a href="" id="bidButton" class="btn btn-default">BID!</a>
+								</div>
+								{{/if}}			
+								
+							</div>
+
+							{{/if}}
+
+						</div>				
+					</div>
+					
+					<!-- put actions here  -->
+				</div><!-- l6 over -->
+				</div><!-- top level l6 main row over -->
+
+				<div class="chart-wrapper">
+					{{>chart this}}
+				</div>				
+		
+
+				
+			</div><!-- top level l6 over -->
+
+			<div class="col l3" >
+				<!-- logs -->
+				{{> auctionLogs}}
+			</div>
+			
+
+		</div>
+	{{else}}
+	<!-- mobile and tab -->
+		<div class="main-wrapper-ak center-align container">
+				<div class="info app-tab">
+					{{> itemCard}}
+					{{> auctionSidebar this}}					
+				</div>
+
+				<div class="stats app-tab">					
+					<div class="chart-wrapper">
+						{{>chart this}}
+					</div>					
+				</div>
+
+
+				<div class="bidding app-tab visible">
+
+					{{#with  owner}}
+						{{> ownerCard}}
+					{{/with}}
+			
+					
+					<div class="row auction-control ">
+					
+						<div class="col s12">
+							{{#if winner}}	
+								{{> winnerCard this.winner }}
+							{{else}}
+
+							<div class=" white-text">
+								<div class="row">
+									<p class="flow-text white-text"> 
+									
+										{{#if currentBid}}
+										Current Bid : <b>Rs {{currentBid}}</b> <br>
+										Leading : <b> {{leading.userProfile.name}}</b>
+										{{else}}
+										Start Bid :<b> Rs {{startBid}}</b> <br>
+										{{/if}}
+									 </p>
+								</div>	
+
+								{{#if ownerPage}}
+								<div class="row input-field">
+									<a href="#" id="stopAuction" class="btn btn-default" style="margin-bottom: 10px;" >end auction</a>
+								</div>
+
+								{{else}}
+								<div class="row input-field">
+								<label for="bid">Enter bid</label>
+								 <input id="bid" type="number">
+									<a href="" id="bidButton" class="btn btn-default">BID!</a>
+								</div>
+								{{/if}}			
+								
+							</div>
+
+							{{/if}}
+							
+							
+
+						</div>				
+					</div>
+					<div class="row">
+						<div class="col s12" style="margin-left:5px !important;">
+							{{> auctionLogs}}
+						</div>
+					</div>
+				</div><!--close bid tab -->
+
+
+			</div>
+
+
+	<div class="fixed-action-btn click-to-toggle" style="bottom: 25vh; right: 20px;">
+	  <a class="btn-floating btn-large red">
+	    <i class="material-icons">more_vert</i>
+	  </a>
+	  <ul>
+	    <li><a class="btn-floating yellow darken-1" id="select-info"><i class="material-icons">info</i></a></li>
+	    <li><a class="btn-floating green" id="select-bidding"><i class="material-icons">gavel</i></a></li>
+	    <li><a class="btn-floating blue" id="select-stats"><i class="material-icons">insert_chart</i></a></li>
+	  </ul>
+	</div>
+	      
+
+	{{/if}}
+	
+
+
+
+	<style>
+
+	.chart-wrapper{
+		min-height: 70vh;
+		max-height: 80vh;
+		width: 100%;
+	}
+
+	.auction-control{
+		margin-top: 0px;
+		text-align: center;
+		width:100%;		
+		border-radius : 4px;
+		background-color: #324c59;
+	}
+
+	.bid-panel{
+		border-radius: 3px;
+	}
+
+	.owner-info-holder{
+		margin-bottom: 5px;
+	}
+
+	.chart-wrapper{
+		width: 100%;
+		min-height: 400px;
+		max-height: 80vh;
+	}
+
+	input#bid{
+		text-align:center;
+	}
+	</style>
+
+	
+
+</template>
+
+<template name="auctionControl">
+	<div class="auction-control valign-wrapper">
+					Enter bid <input type="number" style="margin-left:30px;width:20%;">
+					<a href="" class="btn btn-default" style="margin-left:20px;">BID!</a>
+	</div>
+</template>
+<template name="subscribeTemplate">
+	<div class="auction-contol valign-wrapper">
+		<a href="" class="btn btn-default" style="margin-left:20px;">SUBSCRIBE</a>
+	</div>
+</template>
+
+<template name="itemCard">
+	<div class="card">
+   <div class="card-image waves-effect waves-block waves-light">
+     <img class="activator" src="{{picture}}">
+   </div>
+   <div class="card-content">
+     <span class="card-title activator grey-text text-darken-4">{{auctionName}} <i class="mdi-navigation-more-vert right"></i></span>
+   </div>
+   <div class="card-reveal">
+     <span class="card-title grey-text text-darken-4">Description<i class="mdi-navigation-close right"></i></span>
+     <p>{{items}}</p>
+     <p>{{description}}</p>
+   </div>
+	</div>
+</template>
+
+<template name="chart">
+	<canvas id="myChart"></canvas>
+</template>

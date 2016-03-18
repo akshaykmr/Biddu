@@ -1,0 +1,64 @@
+<template name="createAuction">
+
+	<br><br>
+
+	<form id="create-auction" class="animated fadeInUp">
+		
+	<div class="row">
+
+		<div class="input-field col s12">
+			<input  id="auctionName" type="text" >
+			<label for="auctionName">Auction Name -<span class="light">fill in an auction name to attract users</span></label>
+		</div>
+
+	</div>
+
+	<div class="row">
+
+		<div class="input-field col s12">
+			<input id="items" type="text" >
+			<label for="items">Items -<span class="light">list the item(s) for auction</span></label>
+		</div>
+
+	</div>
+
+	<div class="row">
+		<div class="file-field input-field col s12">
+		  <div class="btn">
+		    <i class="mdi-content-add-circle"></i>add photo
+		    <input type="file" id="fileInput"/>
+		  </div>
+		</div>		
+	</div>
+
+	<br><br>
+
+	<div class="row">
+	   <div class="input-field col s12">
+	     <textarea id="description" class="materialize-textarea">	     	
+	     </textarea>
+	     <label for="description">Description: <span class="light">Some info for other users about the auction, items etc.</span> </label>	     
+	   </div>
+	</div>
+
+
+	<div class="row">
+
+		<div class="input-field col s12">
+			<input id="startBid" type="number" >
+			<label for="startBid">Starting bid</label>
+		</div>
+
+	</div>
+
+	<div class="row">
+		<div class="input-field col s12">
+			<button class="btn waves-effect waves-light" type="submit" name="action" id="createAuctionSubmit">Submit
+			    <i class="mdi-content-send right"></i>
+			  </button>
+		</div>
+	</div>
+	
+	</form>
+
+</template>

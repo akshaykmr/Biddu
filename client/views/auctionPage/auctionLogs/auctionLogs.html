@@ -1,0 +1,44 @@
+<template name="auctionLogs">
+    <ul class="bs_timeline animated fadeInUpBig">    
+    {{#if emptyLog}}
+
+    <li class="timeline-right">
+        <div class="timeline-panel">
+            <div class="timeline-copy">
+                <h6 class="timeline-title">
+                    <b>No activity <i>yet</i></b>
+                </h6>
+                <p>Event logs will show up with the first bid!</p>
+            </div>
+        </div>
+        <div class="timeline-badge info">
+            <i class="fa fa-clock-o" data-toggle="tooltip" title="12/06/2015"></i>
+        </div>
+    </li>
+    {{/if}}
+  {{#each event}}
+    {{> auctionLogsItem}}
+
+  {{/each}}
+    <!-- {{>biddingItem}} -->
+</ul>
+</template>
+
+
+<template name="auctionLogsItem">
+
+    <li class="timeline-right">
+        <div class="timeline-panel">
+            <div class="timeline-copy">
+                <h6 class="timeline-title">
+                    <b>{{userProfile.name}}</b>
+                </h6>
+                <p>{{activity}}</p>
+            </div>
+        </div>
+        <div class="timeline-badge info">
+            <i class="fa fa-clock-o" data-toggle="tooltip" title="12/06/2015"></i>
+        </div>
+    </li>
+    
+</template>

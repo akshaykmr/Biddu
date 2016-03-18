@@ -1,0 +1,60 @@
+<template name="notifications">
+
+	<br>
+	<div class="row">
+	        <div class="col s12">
+	            <h5 class="grey-text text-darken-1">Notifications</h5><hr>
+				
+				{{#if Template.subscriptionsReady}}
+				
+				{{#if noNotifications}}
+					<p class="flow-text">there are no notifications yet</p>
+					<hr>
+				
+				{{else}}
+	         		{{> notificationCollection}}
+	            {{/if}}
+	            {{else}}
+					{{> loading}}
+	            	
+	            {{/if}}
+	        </div>
+	    </div>
+</template>
+
+<template name="notificationCollection">
+    <ul class="collapsible collapsible-accordion" data-collapsible="accordion">
+
+    {{#each notification}}
+        {{> collectionItem}}
+    {{/each}}	             
+    </ul>
+</template>
+
+<template name="collectionItem">
+    <li >
+        <div class="collapsible-header n-coll-head">
+            {{content}} 
+            {{#unless read }}
+             <i class="fa fa-bolt right"></i>
+             {{/unless}}
+        </div>
+        <div class="collapsible-body green accent-1">
+            <div style="margin-left:5px; margin-right:5px;">              
+                <div class="row">
+                    <div class="l3 col">
+                        <img src="{{u.user.picture.medium}}" class="align-right circle">
+                    </div>
+                    <div class="l9 col">
+                        This is where more information will be shared :)
+                        <!-- <h4>first name</h4>
+                        <label>details</label> {{details}}<br>
+                        <label>Password</label> password <br>
+                        <label>Phone</label>phone <br>
+                        <label>Location</label> location, city -->
+                    </div>
+                </div>                              
+            </div>
+        </div>
+    </li>
+</template>

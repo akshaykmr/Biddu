@@ -1,0 +1,58 @@
+<template name="accountDropdown">
+	        <li>
+		        <a class="dropdown-button" id="manageAccountDropdown" href="#!" data-activates="account-options">Account<i class="mdi-action-account-circle right"></i></a>
+	        </li>
+
+	        <ul id="account-options" class="dropdown-content">
+	          <li><a href="#!">manage account</a></li>
+	          <li class="divider"></li>
+	          <li><a href="#!" class="signOut">log out</a></li>
+	        </ul>
+</template>
+
+
+<!-- ----------------------------------------------------------------------------- -->
+
+<template name="loginDropdown">
+	        <li>
+		        <a class="dropdown-button" id="signInDropdown" href="#!" data-activates="sign-in-options">Sign in<i class="mdi-navigation-arrow-drop-down right"></i></a>
+	        </li>
+
+	        <ul id="sign-in-options" class="dropdown-content">
+	          <li><a href="#!" class="loginFacebook">Facebook</a></li>
+	          <li><a href="#!" class="loginGoogle">Google </a></li>	      
+	          <li><a href="#!" class="loginTwitter">Twitter </a></li>	      
+	        </ul>
+</template>
+
+
+<!-- ------------------------------------------------------------------------------- -->
+
+
+<template name="notifyDropdown">
+
+	<li>
+		<a class="dropdown-button" id="notificationDropdown" href="#!" data-activates="notify-list">
+		<i class="mdi-notification-event-note"></i></a>
+	</li>
+
+  	<ul id="notify-list" class="dropdown-content">
+  		{{#if Template.subscriptionsReady}}
+	  	  {{#each notificationEntry}}
+		    <li><a href="#!">{{content}} </a>  </li>	
+	  	  {{/each}}
+	  	{{else}}
+	  	 	<li><a href="#!">loading...</a></li>
+	  	{{/if}}
+
+	  	<li class="divider"></li>
+	  	<li class="divider"></li>
+	  	<li><a href="/notifications" class="green-text">see all notifications</a></li>
+
+  	</ul>
+<!-- notifications | TODO : keep mobile and desktop views in sync --> 
+</template>
+
+
+
+<!-- ---------------------------------------------------------------------------------- -->

@@ -1,0 +1,26 @@
+<template name="winnerCard">
+	
+	<div class="row customColors valign-wrapper">
+	<div class="col s4 l4">
+		<img src="{{userProfile.picture}}" class="circle" style="height:60px; width:60px; margin-top:20px; margin-left:20px;" alt="">
+	</div>
+
+	<div class="col l8 s8">
+		<p class="flow-text white-text animated pulse infinite"> 
+			<span class="">This auction was won by</span>  <br><b>{{userProfile.name}}</b> <br>
+			Final Bid : <b>{{../currentBid}}</b>
+		 </p>
+	</div>
+		
+	</div>	
+
+
+		<style>
+	.customColors {
+		margin: 5px 5px;
+		background:cadetblue;
+		border-radius : 4px;
+	}
+
+		</style>
+</template>

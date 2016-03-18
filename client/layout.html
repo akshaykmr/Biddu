@@ -1,0 +1,86 @@
+<template name="layout">
+	{{>indicator}}
+<div class="navbar-fixed">
+	<nav class="green accent-3"> <!-- green accent-3  -->
+		
+	    <div class=" nav-wrapper container" >
+	      <a href="/" class="brand-logo" >
+	      <img class="img-responsive center" src="/logo_b.png" />
+	      </a>
+
+		<!-- toggle  -->
+	      <a href="#" data-activates="mobile-demo" class="button-collapse">
+	      	<i class="mdi-navigation-menu"></i>
+	      </a>
+
+	      <ul class="right hide-on-med-and-down" >
+
+	        <li><a href="/auctions">Auctions</a></li>
+	        <!-- dropdown cart -->    	
+			
+	        
+
+	        {{#if currentUser}}
+			
+					<!-- dropdown notification -->
+
+					{{> notifyDropdown}}				
+		      {{> accountDropdown}}		        
+            	
+	        {{else}}
+
+	        	<!-- sign in dropdown -->
+
+        	{{> loginDropdown}}	       
+<!-- 
+	        <li><a href="#" class="signUp ">Sign Up!</a></li> -->
+		    	{{/if}}
+
+	      </ul>
+
+
+
+
+	      <!-- mobile -->
+	        <ul class="side-nav" id="mobile-demo">	        
+	        <li><a href="/auctions">Auctions</a></li>
+	       
+			
+			<!-- add collapsible -->
+			
+	        {{#if currentUser}}
+	        <li><a href="/notifications" >notifications</a></li>
+	        <!-- <li><a href="#" class="manageAccountButton">Account</a></li> -->
+	        <li><a href="#" class="signOut">Sign Out</a></li>
+	        {{else}}			
+
+	        <li><a href="#" class="signIn">Sign in</a></li>
+	        {{/if}}
+	      </ul>
+	      <!-- end mobile -->
+
+	    </div>
+	</nav>
+</div>
+
+<!-- modals -->
+{{> signInModal}}
+{{> signUpModal}}
+
+{{#if auctionPage}}
+ {{> yield}}
+{{else}}
+<div class="my-container">
+	{{> yield}}
+</div>
+{{/if}}
+
+<style>
+	.my-container{
+		margin: 0 auto;
+		width: 80%;
+	}
+</style>
+
+
+</template>

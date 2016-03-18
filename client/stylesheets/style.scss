@@ -1,0 +1,23 @@
+audio {
+	display: none;
+}
+
+.nav-color{
+	background-color: #a5d628;
+}
+.brand-logo > img{
+	margin-top: 5px;
+	max-height: 46px;
+	width: auto;
+}
+
+@media only screen and (min-width: 600px) { 
+ 	.brand-logo> img{
+ 		margin-top: 5px;
+ 		max-height: 54px;
+ 		width: auto;
+ 	}
+}
+
+
+
