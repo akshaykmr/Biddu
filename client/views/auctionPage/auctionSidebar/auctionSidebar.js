@@ -38,3 +38,16 @@ Template.userListItem.helpers({
 	}
 })
 
+
+Template.auctionSidebar.events({
+	
+	'click #chatButton':function(){
+		console.log('lel');
+
+		var hostname=window.location.hostname;
+		if(hostname==='localhost')
+			window.open( 'http://localhost:3000/chat/'+Session.get('chatRoomId'), '_blank');
+		else
+		window.open('https://biddu.mybluemix.net/chat/'+Session.get('chatRoomId'),'_blank');
+	}
+});

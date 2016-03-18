@@ -48,8 +48,8 @@ personality_insights.profile({
 //var fs = Meteor.npmRequire('fs');
  
 Watson.textToSpeech = watson.text_to_speech({
-	"username": "688b00ce-1668-4424-83fc-92093d6876ba",
-   	"password": "OcpZ2Lj9wfUY",			
+	"username": "3843ce9b-eebc-40b2-8aba-aafeadbc1758",
+   	"password": "ByfQVxfB755M",			
   version: 'v1'
 });
 //sample params

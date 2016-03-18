@@ -43,11 +43,11 @@ Meteor.methods({
 					{$set : {currentBid : bid, leading : {userProfile: Meteor.user().profile, id: Meteor.userId()}}, 
 					 $inc: {score: 1}
 					});
-
 				return {
 					pass: true
 				};
 			}else{
+
 				return {
 					pass: false,
 					reason: 'bid not high enough -_-"'
