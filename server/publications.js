@@ -33,12 +33,15 @@ Meteor.methods({
 		if(!Meteor.user())
 			throw new Meteor.Error('logged out');
 
+		bid=parseInt(bid);
+
 		var auction= Auctions.findOne(auctionId);
 
 		var currentBid=auction.currentBid;
+		currentBid=parseInt(currentBid);
 
 		if(!currentBid){
-			if(bid>auction.startBid){
+			if(bid>=parseInt(auction.startBid)){
 				Auctions.update(auctionId, 
 					{$set : {currentBid : bid, leading : {userProfile: Meteor.user().profile, id: Meteor.userId()}}, 
 					 $inc: {score: 1}
