@@ -2,14 +2,14 @@
 
 ###Video demo https://youtu.be/A5FAvjZvsyc
 
-<img src="http://imgur.com/Usk4GLV" alt="" max-height="500px">
-<img src="http://imgur.com/vjqrWI9" alt="" max-height="500px">
-<img src="http://imgur.com/AoYwEGp" alt="" max-height="500px">
+<img src="http://imgur.com/Usk4GLV.jpg" alt="" height="400px">
+<img src="http://imgur.com/vjqrWI9.jpg" alt="" height="400px">
+<img src="http://imgur.com/AoYwEGp.jpg" alt="" height="400px">
 
 <br>
 
-<img src="http://imgur.com/RoBBVsN" alt="" max-height="400px">
-<img src="http://imgur.com/ojZ9IKU" alt="" max-height="400x">
+<img src="http://imgur.com/RoBBVsN.jpg" alt="" width="320px">
+<img src="http://imgur.com/ojZ9IKU.jpg" alt="" width="320px">
 
 
 #####Live link - trial expired
