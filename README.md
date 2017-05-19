@@ -1,6 +1,6 @@
 ### Hackathon Winner - won an iPhone 6 :D
 
-###Video demo https://youtu.be/A5FAvjZvsyc
+### Video demo https://youtu.be/A5FAvjZvsyc
 
 <img src="http://imgur.com/Usk4GLV.jpg" alt="" height="400px">
 <img src="http://imgur.com/vjqrWI9.jpg" alt="" height="400px">
@@ -12,12 +12,12 @@
 <img src="http://imgur.com/ojZ9IKU.jpg" alt="" width="320px">
 
 
-#####Live link - trial expired
+##### Live link - trial expired
 > note: the live link is hosted on a trial bluemix account. If it doesn't open anymore open an issue and I'll 
 set up some alternative hosting.
 
 
-#####Deploying 
+##### Deploying 
 
 1.Create a bluemix instance with node.js template. give a name to it say 'myapp'. will use 'myapp' for rest of the steps.
 
@@ -37,7 +37,7 @@ eg. (substitute your created username and password which you created in compose)
 
 
 
-#####In the project directory
+##### In the project directory
 
 4.connect to bluemix
 
@@ -57,7 +57,7 @@ access the app from the url seen in dashboard
 
 
 
-####iPhone/Apple devices:
+#### iPhone/Apple devices:
 
 1. you must have a mac for this. No need for developer account however since you can run app locally for free in xcode 7.
 2. Install meteor tool https://www.meteor.com/install
@@ -67,7 +67,7 @@ settings parameter is optional
 This will open a xcode project from where you can run the app simulator or your device.
 
 
-####Note:
+#### Note:
 currently facebook and google oauth redirect urls are set for my app. i.e they wont run on a url other than "biddu.au-syd.mybluemix.net"
 to fix this create your own facebook/google/twitter appId and keys for oauth and replace them in server/startup.js
 
